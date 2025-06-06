@@ -1,5 +1,5 @@
 import { PostCoverImage } from '../PostCoverImage';
-import { PostHeading } from '../PostHeading';
+import { PostSummary } from '../PostSummary';
 
 export function PostFeatured() {
   const slug = 'qualquer';
@@ -18,23 +18,15 @@ export function PostFeatured() {
           priority: true,
         }}
       />
-      <div className='flex flex-col gap-4 sm:justify-center'>
-        <time
-          className='text-slate-600 text-sm/tight block'
-          dateTime='2025-04-20'
-        >
-          20/04/2025 10:00
-        </time>
-        <PostHeading as='h1' url={postLink}>
-          Teste
-        </PostHeading>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae,
-          officiis sed rem hic velit eligendi iste ipsa voluptas! Illum
-          doloribus, voluptatem eveniet velit minima totam nostrum illo vitae
-          reprehenderit temporibus?
-        </p>
-      </div>
+      <PostSummary
+        postHeading={'h1'}
+        postLink={postLink}
+        createdAt={'2025-01-15T04:54:26'}
+        title={'Organização pessoal: por onde começar'}
+        excerpt={
+          'Por exemplo, ele pode dividir o código em partes menores para que o navegador só carregue o que for necessário.'
+        }
+      />
     </section>
   );
 }
