@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { PostCoverImage } from '../PostCoverImage';
 import { PostSummary } from '../PostSummary';
 import { findAllPublicPostsCached } from '@/lib/post/queries';
@@ -6,7 +7,12 @@ export async function PostsList() {
   const posts = await findAllPublicPostsCached();
 
   return (
-    <div className='grid grid-cols-1 mb-16 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+    <div
+      className={clsx(
+        'grid grid-cols-1 mb-16 gap-8',
+        'sm:grid-cols-2 lg:grid-cols-3',
+      )}
+    >
       {posts.map(post => {
         const postLink = `/post/${post.slug}`;
         return (
