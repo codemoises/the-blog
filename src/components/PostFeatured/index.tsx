@@ -15,19 +15,17 @@ export async function PostFeatured() {
         imageProps={{
           width: 1200,
           height: 720,
-          src: '/images/bryen_9.png',
-          alt: 'Alt da imagem',
+          src: post.coverImageUrl,
+          alt: post.title,
           priority: true,
         }}
       />
       <PostSummary
         postHeading={'h1'}
         postLink={postLink}
-        createdAt={'2025-01-15T04:54:26'}
-        title={'Organização pessoal: por onde começar'}
-        excerpt={
-          'Por exemplo, ele pode dividir o código em partes menores para que o navegador só carregue o que for necessário.'
-        }
+        createdAt={post.createdAt}
+        title={post.title}
+        excerpt={post.excerpt}
       />
     </section>
   );
