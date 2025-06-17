@@ -18,7 +18,3 @@ export function formatDistanceToNow(rawDate: string): string {
     addSuffix: true,
   });
 }
-
-const rawDate = '2025-04-12T06:31:23.411Z';
-console.log(rawDate);
-console.log(formatDistanceToNow(rawDate));

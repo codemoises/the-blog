@@ -10,7 +10,6 @@ type RootErrorPageProps = {
 
 export default function RootErrorPage({ error }: RootErrorPageProps) {
   useEffect(() => {
-    // console.log(error);
   }, [error]);
   return (
     <ErrorMessage
