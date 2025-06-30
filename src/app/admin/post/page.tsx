@@ -1,18 +1,28 @@
-import PostsListAdmin from '@/components//Admin/PostListAdmin';
-import { SpinLoader } from '@/components/SpinLoader';
-import { Metadata } from 'next';
-import { Suspense } from 'react';
+import { InputText } from '@/components/InputText';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Post Admin',
-};
-
 export default async function AdminPostPage() {
   return (
-    <Suspense fallback={<SpinLoader className='mb-16' />}>
-      <PostsListAdmin />
-    </Suspense>
+    <div className='flex flex-col gap-6'>
+      <InputText labelText='Nome' placeholder='Digite seu nome' />
+      <InputText labelText='Sobrenome' placeholder='Digite seu sobrenome' />
+      <InputText
+        disabled
+        labelText='Sobrenome'
+        placeholder='Digite seu sobrenome'
+      />
+      <InputText
+        disabled
+        labelText='Sobrenome'
+        placeholder='Digite seu sobrenome'
+      />
+      <InputText
+        labelText='Sobrenome'
+        placeholder='Digite seu sobrenome'
+        readOnly
+      />
+      <InputText labelText='Sobrenome' placeholder='Digite seu sobrenome' />
+    </div>
   );
 }
