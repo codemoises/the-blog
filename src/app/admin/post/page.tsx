@@ -1,12 +1,7 @@
-import { ManagerPostForm } from '@/components/Admin/ManagerPostForm';
+import PostsListAdmin from '@/components/Admin/PostListAdmin';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPostPage() {
-  return (
-    <>
-      <h1>Criar Post</h1>
-      <ManagerPostForm />
-    </>
-  );
+  return <PostsListAdmin />;
 }
