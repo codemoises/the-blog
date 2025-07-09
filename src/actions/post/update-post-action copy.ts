@@ -7,19 +7,23 @@ import {
 } from '@/dto/post/dto';
 import { PostUpdateSchema } from '@/lib/post/validate';
 import { postRepository } from '@/repositories/post';
+import { asyncDelay } from '@/utils/async_delay';
 import { getZodErrorMessages } from '@/utils/get-zod-error-messages';
+import { makeRandomString } from '@/utils/make-random-string';
 import { revalidateTag } from 'next/cache';
 
 type UpdatePostActionState = {
   formState: PublicPost;
   errors: string[];
-  success?: true;
+  success?: string;
 };
 
 export async function updatePostAction(
   prevState: UpdatePostActionState,
   formData: FormData,
 ): Promise<UpdatePostActionState> {
+  await asyncDelay(3000);
+
   if (!(formData instanceof FormData)) {
     return {
       formState: prevState.formState,
@@ -75,6 +79,6 @@ export async function updatePostAction(
   return {
     formState: makePublicPostFromDb(post),
     errors: [],
-    success: true,
+    success: makeRandomString(),
   };
 }
